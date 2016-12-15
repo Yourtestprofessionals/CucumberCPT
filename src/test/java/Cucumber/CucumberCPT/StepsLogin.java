@@ -76,8 +76,8 @@ public class StepsLogin {
 		testSpec.selectFolder(folder);
 	}
 
-	@When("^user clicks on Test Case Operation button \"(.*?)\"$")
-	public void user_clicks_on_Test_Case_Operation_button(String arg1) throws Throwable {
+	@When("^user clicks on Test Case Operation button$")
+	public void user_clicks_on_Test_Case_Operation_button() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		testCaseData = testSpec.selectCreate("create_tc");		
 	}
