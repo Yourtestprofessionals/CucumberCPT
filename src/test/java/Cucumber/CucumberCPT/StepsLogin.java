@@ -88,21 +88,21 @@ public class StepsLogin {
 		
 	}
 
-	@When("^user clicks on create button \"(.*?)\"$")
-	public void user_clicks_on_create_button(String create) throws Throwable {
+	@When("^user clicks on create button$")
+	public void user_clicks_on_create_button() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		testCaseData = testSpec.selectCreate("do_create_button");
 		
 	}
 
-	@When("^user clicks on delete button \"(.*?)\"$")
-	public void user_clicks_on_delete_button(String delete) throws Throwable {
+	@When("^user clicks on delete button$")
+	public void user_clicks_on_delete_button() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		testCaseData.selectDelete("delete_tc");		
 	}
 
-	@When("^user clicks on deletion confiramtion button \"(.*?)\"$")
-	public void user_clicks_on_deletion_confiramtion_button(String arg1) throws Throwable {
+	@When("^user clicks on deletion confiramtion button$")
+	public void user_clicks_on_deletion_confiramtion_button() throws Throwable {
 		testCaseData.selectCDelteConfirm("do_delete");
 	}
 	

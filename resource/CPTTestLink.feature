@@ -12,8 +12,8 @@ Feature: this is my logging feature file
     And user clicks on folder name "TS XXX"
     And user clicks on Test Case Operation button "Create"
     And user fills in "Test Case Title" and "Summary"
-    And user clicks on create button "Create"
-    And user clicks on delete button "Delete"
+    And user clicks on create button
+    And user clicks on delete button
     And user clicks on deletion confiramtion button "Yes, delete Test Case"
     Then check if test cases is successfully deleted "Test Case Title was"
     And close the browser
