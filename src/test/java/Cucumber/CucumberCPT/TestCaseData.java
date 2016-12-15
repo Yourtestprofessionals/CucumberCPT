@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class TestCaseData extends TestSpecification{
+public class TestCaseData extends AbstractPage{
 	public TestCaseData(WebDriver driver) {
 		super(driver);
 	}

@@ -3,7 +3,7 @@ package Cucumber.CucumberCPT;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class TestSpecification extends CPTPage {
+public class TestSpecification extends AbstractPage {
 
 	public TestSpecification(WebDriver driver) {
 		super(driver);
