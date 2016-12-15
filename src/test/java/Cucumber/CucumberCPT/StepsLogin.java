@@ -62,7 +62,7 @@ public class StepsLogin {
 	@When("^user clicks on \"(.*?)\"$")
 	public void user_clicks_on(String issue) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);		
-		testSpec = cptPage.getIssuePage(issue);
+		testSpec = cptPage.getTestCasePage(issue);
 		
 	}
 	
