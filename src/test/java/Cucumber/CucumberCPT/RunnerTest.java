@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		format = {"pretty","html:target/html/","json:target/json/out.json"},
+		format = {"pretty","html:target/html/login/","json:target/json/loginOut.json"},
 		features = "resource/",
 		tags = {"@login"}
 		)

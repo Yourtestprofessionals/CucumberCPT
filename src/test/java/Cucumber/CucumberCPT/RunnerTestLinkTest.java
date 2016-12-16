@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		format = {"pretty","html:target/html/","json:target/json/outTestLink.json"},
+		format = {"pretty","html:target/html/testLink/","json:target/json/outTestLink.json"},
 		features = "resource/",
 		tags = {"@TestLink"}
 		)

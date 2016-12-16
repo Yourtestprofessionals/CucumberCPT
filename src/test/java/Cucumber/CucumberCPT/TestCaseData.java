@@ -31,6 +31,7 @@ public class TestCaseData extends AbstractPage{
 	//click on delete button confirmation
 	public TestCaseData selectCDelteConfirm(String dButton){
 		driver.findElement(By.id(dButton)).click();
+		System.out.println("siurce: "+driver.getPageSource());
 		return new TestCaseData(driver);		
 	}
 	

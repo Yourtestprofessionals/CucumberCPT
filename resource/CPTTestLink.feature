@@ -11,7 +11,7 @@ Feature: this is my logging feature file
     And user clicks on Test Specification "Test specification"
     And user clicks on folder name "TS XXX"
     And user clicks on Test Case Operation button
-    And user fills in "Test Case Title" and "Summary"
+    And user fills in "Test Case Title" and "Summary text"
     And user clicks on create button
     And user clicks on delete button
     And user clicks on deletion confiramtion button
