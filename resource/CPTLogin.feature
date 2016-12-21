@@ -1,7 +1,7 @@
 Feature: this is my logging feature file
 
   @login
-  Scenario Outline: this is logging scenario
+  Scenario Outline: this is logging scenario(s)
     Given navigate to CPT Portal <URL>
     When logging into the portal using id <User Id>
     And logging into the portal using pass <Password>

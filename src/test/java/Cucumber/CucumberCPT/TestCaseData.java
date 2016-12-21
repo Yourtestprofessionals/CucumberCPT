@@ -1,4 +1,10 @@
 package Cucumber.CucumberCPT;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
 /*******************
  * Created by:
  * Creation date:
@@ -7,7 +13,10 @@ package Cucumber.CucumberCPT;
  */
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
 
 public class TestCaseData extends AbstractPage{
 	public TestCaseData(WebDriver driver) {
@@ -31,12 +40,20 @@ public class TestCaseData extends AbstractPage{
 	//click on delete button confirmation
 	public TestCaseData selectCDelteConfirm(String dButton){
 		driver.findElement(By.id(dButton)).click();
-		System.out.println("siurce: "+driver.getPageSource());
 		return new TestCaseData(driver);		
 	}
 	
 	//check deletion message
 	public boolean checkDeleteConfirm(String succ6test){
+		File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			Date date = new Date(System.currentTimeMillis());
+			//System.out.println("Date: "+date);
+
+			FileUtils.copyFile(source, new File("C://Users//elfer//git//CucumberCPT//DeleteConfirmation"+new SimpleDateFormat("_dd_MMMM_YYYY_HH_mm_ss").format(date)+".png"));	
+		} catch (IOException e) {
+	        e.printStackTrace();
+	    }
 		return driver.getPageSource().contains(succ6test);		
 	}
 	

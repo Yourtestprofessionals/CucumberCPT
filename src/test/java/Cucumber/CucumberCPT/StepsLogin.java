@@ -18,6 +18,8 @@ public class StepsLogin {
 	CPTPage cptPage;
 	TestSpecification testSpec;
 	TestCaseData testCaseData;
+	IssuePage issuePage;
+	ReportIssuePage reportIssuePage;
 
 	@Given("^navigate to CPT Portal ([^\"]*)$")
 	public void navigate_to_CPT_Portal(String url) throws Throwable {
@@ -59,7 +61,7 @@ public class StepsLogin {
 		cptPage.clickArrow(); 	
 	}
 	
-	@When("^user clicks on \"(.*?)\"$")
+	@When("^user clicks on test cases \"(.*?)\"$")
 	public void user_clicks_on(String issue) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);		
 		testSpec = cptPage.getTestCasePage(issue);
@@ -109,6 +111,50 @@ public class StepsLogin {
 	@Then("^check if test cases is successfully deleted \"(.*?)\"$")
 	public void check_if_test_cases_is_successfully_deleted(String succ6test) throws Throwable {
 		Assert.assertTrue("succ. checked: ",testCaseData.checkDeleteConfirm(succ6test));
+	}
+	
+	//issue
+	
+	@When("^user clicks on Issues \"(.*?)\"$")
+	public void user_clicks_on_Issues(String issue) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);		
+		issuePage = cptPage.getIssuePage(issue);
+		
+	}
+	
+	@When("^user clicks on Report Issue \"(.*?)\"$")
+	public void user_clicks_on_Report_Issue(String reportIssue) throws Throwable {
+		reportIssuePage = issuePage.getReportIssuePage(reportIssue);
+	}
+	
+	@When("^user select issue category with value ([^\"]*)$")
+	public void user_select_issue_category(String category) throws Throwable {
+		reportIssuePage.getCategory(category);
+	}
+
+	@When("^user select issue reproducibility with value ([^\"]*)$")
+	public void user_select_issue_reproducibility(String repro) throws Throwable {
+		reportIssuePage.getReproducibility(repro);
+	}
+
+	@When("^user selct issue severity with value ([^\"]*)$")
+	public void user_selct_issue_severity(String sev) throws Throwable {
+		reportIssuePage.getSeverity(sev);
+	}
+
+	@When("^user select issue priority with value ([^\"]*)$")
+	public void user_select_issue_priority(String prio) throws Throwable {
+		reportIssuePage.getPriority(prio);
+	}
+	
+	@When("^user fills in summary \"(.*?)\" and description \"(.*?)\"$")
+	public void user_fills_in_summary_and_description(String summary, String description) throws Throwable {
+		reportIssuePage.setSummarDescription(summary, description);
+	}
+	
+	@When("^user submit the issue form$")
+	public void user_submit_the_issue_form() throws Throwable {
+		reportIssuePage.getSubmittion();
 	}
 
 }

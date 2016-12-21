@@ -15,8 +15,8 @@ public class CPTPage extends AbstractPage {
 		boolean result = false;
 		try {
 			result = driver.findElement(By.linkText(expectedResponse)).getText().contains(expectedResponse);
-			System.out.println("page element: "
-					+ driver.findElement(By.linkText(expectedResponse)).getText().contains(expectedResponse));
+			//System.out.println("page element: "
+					//+ driver.findElement(By.linkText(expectedResponse)).getText().contains(expectedResponse));
 		} catch (NoSuchElementException e) {
 			System.out.println("Element: " + expectedResponse + " does not exist");
 			result = false;
@@ -34,6 +34,12 @@ public class CPTPage extends AbstractPage {
 	public TestSpecification getTestCasePage(String testCase) {
 		driver.findElement(By.linkText(testCase)).click();
 		return new TestSpecification(driver);
+	}
+	
+	//click on test case page
+	public IssuePage getIssuePage(String issue) {
+		driver.findElement(By.linkText(issue)).click();
+		return new IssuePage(driver);
 	}
 
 }

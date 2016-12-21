@@ -1,13 +1,13 @@
-Feature: this is my logging feature file
+Feature: this is my TestLink feature file
 
   @TestLink
-  Scenario Outline: this is logging scenario
+  Scenario Outline: this is TestLink scenario(s)
     Given navigate to CPT Portal <URL>
     And logging into the portal using id <User Id>
     And logging into the portal using pass <Password>
     And click on login
     When user clicks on the right arrow
-    And user clicks on "Test cases"
+    And user clicks on test cases "Test cases"
     And user clicks on Test Specification "Test specification"
     And user clicks on folder name "TS XXX"
     And user clicks on Test Case Operation button
